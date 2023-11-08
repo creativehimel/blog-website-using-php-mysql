@@ -24,6 +24,8 @@ if (!isset($_SESSION["is_login"]) && $_SESSION["is_login"] != true) {
 
     <!-- Custom styles for this template-->
     <link href="./assets/css/sb-admin-2.min.css" rel="stylesheet">
+    <!-- Custom styles for this page -->
+    <link href="./assets/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 
 </head>
 
