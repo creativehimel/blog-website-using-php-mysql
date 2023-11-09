@@ -43,13 +43,11 @@
                                 <th>Action</th>
                             </tr>
                         </thead>
-
                         <tbody>
                             <?php
                              $query = "SELECT * FROM categories";
                              $stmt = $pdo->query($query);
                              $categories = $stmt->fetchAll(PDO::FETCH_OBJ);
-                             
                              if($categories != null){
                                  foreach($categories as $key => $category){
                                      ?>
@@ -59,9 +57,14 @@
                                 <td><?php echo $category->slug; ?></td>
                                 <td>
                                     <a href="edit-category.php?id=<?php echo $category->id; ?>"
-                                        class="btn btn-sm btn-primary">Edit</a>
+                                        class="btn btn-sm btn-primary">
+                                        <i class="fas fa-edit"></i>
+                                    </a>
                                     <a href="delete-category.php?id=<?php echo $category->id; ?>"
-                                        class="btn btn-sm btn-danger">Delete</a>
+                                        onclick="return confirm('Are you sure to delete?')"
+                                        class="btn btn-sm btn-danger">
+                                        <i class="fas fa-trash"></i>
+                                    </a>
                                 </td>
                             </tr>
                             <?php
